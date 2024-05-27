@@ -11,12 +11,13 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-
-    //FRAGMENTS
+    <string name="background_image_description">Background Image</string>
 
     //LOGIN
     <string name="fragment_login_description">Login fragment</string>
     <string name="login_fragment_label">Login</string>
+
+    //FRAGMENTS
 
     //FISA MEDICALA
     <string name="fisa_medicala_fragment_label">Fisa Medicala</string>
@@ -37,14 +38,14 @@
 
     <string name="MAINifcvLoginButton"> Conectare </string>
     <string name="MAINtilPassword"> Parolă </string>
-    <string name="MAINtilEmail"> Email </string>
+    <string name="MAINtilEmail"> Nume de utilizator (CNP) </string>
     <string name="MAINifcvForgotPasswordText"> Am uitat parola </string>
     <string name="MAINifcvRegisterButton"> Registrare </string>
     <string name="MAINifcvRememberCheckbox"> Ține-mă minte </string>
     <string name="MAINifcvCBPasswordlImage"> Parolă corectă </string>
-    <string name="MAINifcvCBEmailImage"> Email corect </string>
-    <string name="MAINllVersionTextView"> Version 0.11 </string>
-    <string name="MAINllInfoTextView"> Vitalis - 2024/05/08 </string>
+    <string name="MAINifcvCBEmailImage"> CNP corect </string>
+    <string name="MAINllVersionTextView"> Version 0.1 </string>
+    <string name="MAINllInfoTextView"> Vitalis - 2024/05/28 </string>
 
     <string name="MAINloginGreeting"> Bine ai venit! </string>
 
@@ -309,7 +310,7 @@
 
     <!-- URLs-->
     <!--server address-->
-    <string name="CLOUD_SERVER"> http://192.168.1.247:4000</string>
+    <string name="CLOUD_SERVER">dummy ip</string>
 
     <!--endpoints-->
     <string name="GET_CHAT_HISTORY">/get_chat_history</string>
@@ -318,7 +319,7 @@
     <string name="SIGN_UP"> /signup </string>
 
     <string name="URLregistration">/registration</string>
-    <string name="LOGIN"> /login </string>
+    <string name="LOGIN">/login</string>
     <string name="URLchats"> /chats </string>
     <string name="URLmessages"> /mesaje </string>
     <string name="URLsend"> /send </string>

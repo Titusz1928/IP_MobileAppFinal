@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_login, R.id.nav_fisa_medicala,R.id.nav_sensors,R.id.nav_chat,R.id.nav_alarm)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
