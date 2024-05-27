@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/LOG_LinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/llMainCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight">
+
+
+        <ScrollView
+            android:id="@+id/mcvScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient">
+
+            <LinearLayout
+                android:id="@+id/mcvLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="100dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/llInputFieldCardView"
+                        android:layout_width="350dp"
+                        android:layout_height="500dp"
+                        android:background="@color/colorBackgroundLight"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.8">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ifcvConstraintLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <Button
+                                android:id="@+id/LOGifcvRegisterButton"
+                                android:layout_width="255dp"
+                                android:layout_height="65dp"
+                                android:backgroundTint="@color/colorPrimaryLight"
+                                android:drawableLeft="@drawable/white_subtle_border"
+                                android:text="@string/MAINifcvRegisterButton"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp"
+                                app:cornerRadius="5dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHeight_percent="0.15"
+                                app:layout_constraintHorizontal_bias="0.505"
+                                app:layout_constraintStart_toStartOf="parent"
+
+                                app:layout_constraintTop_toBottomOf="@+id/LOGifcvLoginButton"
+                                app:layout_constraintVertical_bias="0.0"
+                                app:layout_constraintWidth_percent="0.3" />
+
+                            <Button
+                                android:id="@+id/LOGifcvLoginButton"
+                                android:layout_width="255dp"
+                                android:layout_height="65dp"
+                                android:backgroundTint="@color/colorSecondary"
+                                android:drawableLeft="@drawable/white_subtle_border"
+                                android:text="@string/MAINifcvLoginButton"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="24sp"
+                                app:cornerRadius="5dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHeight_percent="0.15"
+                                app:layout_constraintHorizontal_bias="0.505"
+
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/LOGifcvForgotPasswordText"
+                                app:layout_constraintVertical_bias="0.256"
+                                app:layout_constraintWidth_percent="0.3" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/ifcvPasswordTextInputLayout"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                app:errorEnabled="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.16"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.455"
+                                app:passwordToggleEnabled="true">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tilPassword"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/colorBackground"
+
+                                    android:hint="@string/MAINtilPassword"
+                                    android:inputType="textPassword"
+                                    android:textColor="@color/colorBackground" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/ifcvEmailTextInputLayout"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="250dp"
+                                app:errorEnabled="true"
+                                app:hintEnabled="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.16"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.488">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tilEmail"
+                                    android:layout_width="250dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/colorBackground"
+
+                                    android:hint="@string/MAINtilEmail"
+                                    android:inputType="text"
+                                    android:textColor="@color/colorTextPrimary" />
+
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/LOGifcvForgotPasswordText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorSecondary"
+                                android:padding="5dp"
+                                android:text="@string/MAINifcvForgotPasswordText"
+                                android:textColor="@color/colorBackground"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.922"
+                                app:layout_constraintStart_toStartOf="parent"
+
+                                app:layout_constraintTop_toBottomOf="@+id/ifcvPasswordTextInputLayout"
+                                app:layout_constraintVertical_bias="0.07" />
+
+                            <CheckBox
+                                android:id="@+id/ifcvRememberCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/MAINifcvRememberCheckbox"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.094"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                app:layout_constraintVertical_bias="0.606" />
+
+                            <TextView
+                                android:id="@+id/ifcvTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/MAINifcvTitleText"
+                                android:textSize="32sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.102"
+                                app:layout_constraintStart_toStartOf="parent"
+
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.061" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
