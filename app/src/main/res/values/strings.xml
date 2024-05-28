@@ -310,11 +310,11 @@
 
     <!-- URLs-->
     <!--server address-->
-    <string name="CLOUD_SERVER">dummy ip address</string>
+    <string name="CLOUD_SERVER">dummy ip</string>
 
     <!--endpoints-->
     <string name="GET_CHAT_HISTORY">/get_chat_history</string>
-    <string name="GET_CHAT_SEARCH"> /get_chat_search </string>
+    <string name="SEARCH_USER"> /search_user </string>
     <string name="GET_CHAT"> /get_chat </string>
     <string name="SIGN_UP"> /signup </string>
     <string name="ADD_USER"> /add_user </string>
