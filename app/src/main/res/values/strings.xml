@@ -300,7 +300,7 @@
 
     <!-- Change Password Layout-->
     <string name="CPAtcvTitleText"> Schimbare Parolă </string>
-
+    <string name="CPAlabel">Schimbare parolă</string>
     <string name="CPAtilOld"> Parolă veche </string>
     <string name="CPAtilNew"> Parolă nouă </string>
     <string name="CPAtilConfirm"> Confirmare parolă </string>
@@ -310,7 +310,7 @@
 
     <!-- URLs-->
     <!--server address-->
-    <string name="CLOUD_SERVER">dummy ip</string>
+    <string name="CLOUD_SERVER">http://16.170.131.136:5000</string>
 
     <!--endpoints-->
     <string name="GET_CHAT_HISTORY">/get_chat_history</string>
@@ -320,6 +320,7 @@
     <string name="ADD_USER"> /add_user </string>
     <string name="GET_MEDICAL_RECORD"> /get_medical_record </string>
     <string name="MEDICAL_RECORD">/medicalrecord</string>
+    <string name="CHANGE_PASSWORD">/changepassword</string>
 
     <string name="URLregistration">/registration</string>
     <string name="LOGIN">/login</string>
@@ -347,6 +348,7 @@
     <string name="FMEtlProfesieContentText">%</string>
     <string name="FMEtlLocDeMunTitleText">Loc de muncă</string>
     <string name="FMEtlLocDeMunContentText">%</string>
+    <string name="CPA3ifcvConfirmButton">CONFIRMARE</string>
 
 
 </resources>

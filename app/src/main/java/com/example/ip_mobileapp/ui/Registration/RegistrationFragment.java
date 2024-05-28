@@ -16,12 +16,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ip_mobileapp.LoginActivity;
 import com.example.ip_mobileapp.MainActivity;
 import com.example.ip_mobileapp.Model.AccessType;
 import com.example.ip_mobileapp.Model.User;
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentLoginBinding;
 import com.example.ip_mobileapp.databinding.FragmentRegistrationBinding;
+import com.example.ip_mobileapp.ui.Login.LoginFragment;
+import com.example.ip_mobileapp.ui.ResetPassword.ResetPassword2Fragment;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.springframework.http.ResponseEntity;
@@ -42,6 +45,7 @@ public class RegistrationFragment extends Fragment {
         View root = binding.getRoot();
 
         Button registrationBtn = binding.REGifcvRegistrationButton;
+        Button backBtn = binding.REGifcvBackButton;
 
         TextInputEditText emailText = binding.tilEmail;
         EditText prenumeText =binding.tlPrenumeEditText;
@@ -85,6 +89,7 @@ public class RegistrationFragment extends Fragment {
                                 Toast.makeText(getActivity(), "Cont creat, email trimis!",
                                         Toast.LENGTH_SHORT).show();
                             });
+                            ((LoginActivity) getActivity()).switchFragment(new LoginFragment());
                         }
                     } catch (Exception e) {
                         // Handle exceptions
@@ -97,6 +102,13 @@ public class RegistrationFragment extends Fragment {
                     }
                 });
                 thread.start();
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((LoginActivity) getActivity()).switchFragment(new LoginFragment());
             }
         });
 

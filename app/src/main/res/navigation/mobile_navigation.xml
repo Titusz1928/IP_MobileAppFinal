@@ -34,6 +34,10 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <action
+        android:id="@+id/to_home"
+        app:destination="@+id/nav_home"/>
+
+    <action
         android:id="@+id/to_recomandare"
         app:destination="@+id/nav_recomandare"/>
 
@@ -100,6 +104,35 @@
         android:name="com.example.ip_mobileapp.ui.Recomandare.RecomandareFragment"
         android:label="@string/RECirTitleText"
         tools:layout="@layout/fragment_recomandare"/>
+
+    <fragment
+        android:id="@+id/nav_change_password1"
+        android:name="com.example.ip_mobileapp.ui.ResetPassword.ChangePasswordFragment"
+        android:label="@string/CPAlabel"
+        tools:layout="@layout/fragment_change_password1"/>
+    <action
+        android:id="@+id/to_change_password"
+        app:destination="@+id/nav_change_password1"/>
+
+    <fragment
+        android:id="@+id/nav_change_password2"
+        android:name="com.example.ip_mobileapp.ui.ResetPassword.ChangePassword2Fragment"
+        android:label="@string/CPAlabel"
+        tools:layout="@layout/fragment_change_password2"/>
+    <action
+        android:id="@+id/to_change_password2"
+        app:destination="@+id/nav_change_password2"/>
+
+    <fragment
+        android:id="@+id/nav_change_password3"
+        android:name="com.example.ip_mobileapp.ui.ResetPassword.ChangePassword3Fragment"
+        android:label="@string/CPAlabel"
+        tools:layout="@layout/fragment_change_password3"/>
+    <action
+        android:id="@+id/to_change_password3"
+        app:destination="@+id/nav_change_password3"/>
+
+
     <!--
     <fragment
         android:id="@+id/nav_gallery"
