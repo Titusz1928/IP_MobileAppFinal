@@ -362,7 +362,7 @@
                         android:paddingBottom="10dp">
 
                         <EditText
-                            android:id="@+id/tlSProfesieEditText"
+                            android:id="@+id/tlProfesieEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -387,7 +387,7 @@
                         android:paddingBottom="10dp">
 
                         <EditText
-                            android:id="@+id/tlSLocMunEditText"
+                            android:id="@+id/tlLocMunEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -414,11 +414,11 @@
 
                         <Button
                             android:id="@+id/REGifcvRegistrationButton"
-                            android:layout_height="65dp"
                             android:layout_width="wrap_content"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/colorPrimaryDark"
+                            android:backgroundTint="@color/colorSecondary"
                             android:text="@string/REGtcvTitleText"
                             android:textColor="@color/colorBackground"
                             android:textSize="20sp"
@@ -436,15 +436,14 @@
 
                         <Button
                             android:id="@+id/REGifcvBackButton"
-                            android:layout_height="65dp"
                             android:layout_width="wrap_content"
+                            android:layout_height="65dp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/colorPrimaryLight"
+                            android:backgroundTint="@color/colorPrimaryDark"
                             android:text="@string/REGtcvBackText"
-                            android:textColor="@color/colorTextPrimary"
-                            android:textSize="16sp"
-                            />
+                            android:textColor="@color/colorBackground"
+                            android:textSize="16sp" />
 
 
                     </TableRow>

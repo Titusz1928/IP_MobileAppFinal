@@ -1,20 +1,33 @@
 package com.example.ip_mobileapp.ui.Registration;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.example.ip_mobileapp.LoginActivity;
+import com.example.ip_mobileapp.MainActivity;
+import com.example.ip_mobileapp.Model.AccessType;
+import com.example.ip_mobileapp.Model.User;
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentLoginBinding;
 import com.example.ip_mobileapp.databinding.FragmentRegistrationBinding;
-import com.example.ip_mobileapp.ui.Login.LoginFragment;
+import com.google.android.material.textfield.TextInputEditText;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Objects;
 
 
 public class RegistrationFragment extends Fragment {
@@ -28,12 +41,62 @@ public class RegistrationFragment extends Fragment {
         binding = FragmentRegistrationBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button toLogin = binding.REGifcvBackButton;
+        Button registrationBtn = binding.REGifcvRegistrationButton;
 
-        toLogin.setOnClickListener(new View.OnClickListener() {
+        TextInputEditText emailText = binding.tilEmail;
+        EditText prenumeText =binding.tlPrenumeEditText;
+        EditText numeText = binding.tlNumeEditText;
+        EditText cnpText = binding.tlCNPEditText;
+        EditText varstaText = binding.tlAgeEditText;
+        EditText stradaText = binding.tlStreeetEditText;
+        EditText orasText = binding.tlCityEditText;
+        EditText judetText = binding.tlJudetEditText;
+        EditText taraText = binding.tlCountryEditText;
+        EditText telefonText = binding.tlPhoneEditText;
+        EditText profesieText = binding.tlProfesieEditText;
+        EditText locdemunText = binding.tlLocMunEditText;
+
+        registrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((LoginActivity) getActivity()).switchFragment(new LoginFragment());
+                String emailString = emailText.getText().toString();
+                String prenumeString = prenumeText.getText().toString();
+                String numeString = numeText.getText().toString();
+                String cnpString = cnpText.getText().toString();
+                Integer varsta = Integer.parseInt(varstaText.getText().toString());
+                String stradaString = stradaText.getText().toString();
+                String orasString = orasText.getText().toString();
+                String judetString = judetText.getText().toString();
+                String taraString = taraText.getText().toString();
+                String telefonString = telefonText.getText().toString();
+                String profesieString = profesieText.getText().toString();
+                String locdemunString = locdemunText.getText().toString();
+
+                Thread thread = new Thread(() -> {
+                    try {
+                        if (cnpString != null && emailString != null && prenumeString!=null && numeString!=null&& varsta!=null&& stradaString!=null&& orasString!=null&& judetString!=null&& taraString!=null&& telefonString!=null&& profesieString!=null&& locdemunString!=null ) {
+                            User user = new User(prenumeString,numeString,cnpString,varsta,stradaString,orasString,judetString,taraString,telefonString,emailString,profesieString,locdemunString);
+                            RestTemplate restTemplate = new RestTemplate();
+                            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(getString(R.string.CLOUD_SERVER)+getString(R.string.ADD_USER),
+                                    user,  Void.class);
+
+                            Handler handler = new Handler(Looper.getMainLooper());
+                            handler.post(() -> {
+                                Toast.makeText(getActivity(), "Cont creat, email trimis!",
+                                        Toast.LENGTH_SHORT).show();
+                            });
+                        }
+                    } catch (Exception e) {
+                        // Handle exceptions
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(() -> {
+                            Log.d("MyTag",e.getMessage());
+                            Toast.makeText(getActivity(),"CNP-ul sau nr de telefon deja exista",
+                                    Toast.LENGTH_LONG).show();
+                        });
+                    }
+                });
+                thread.start();
             }
         });
 

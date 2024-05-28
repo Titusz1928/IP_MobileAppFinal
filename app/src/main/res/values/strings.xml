@@ -317,11 +317,36 @@
     <string name="GET_CHAT_SEARCH"> /get_chat_search </string>
     <string name="GET_CHAT"> /get_chat </string>
     <string name="SIGN_UP"> /signup </string>
+    <string name="ADD_USER"> /add_user </string>
+    <string name="GET_MEDICAL_RECORD"> /get_medical_record </string>
+    <string name="MEDICAL_RECORD">/medicalrecord</string>
 
     <string name="URLregistration">/registration</string>
     <string name="LOGIN">/login</string>
     <string name="URLchats"> /chats </string>
     <string name="URLmessages"> /mesaje </string>
     <string name="URLsend"> /send </string>
+
+    <!--FISA MEDICALA-->
+    <string name="FMEllTitleTextView">Date Personale</string>
+    <string name="FMEtlNumeTitleText">Nume</string>
+    <string name="FMEtlNumeContentText">%</string>
+    <string name="FMEtlPrenumeTitleText">Prenume</string>
+    <string name="FMEtlPrenumeContentText">%</string>
+    <string name="FMEtlCNPTitleText">CNP</string>
+    <string name="FMEtlCNPContentText">%</string>
+    <string name="FMEtlVarstaTitleText">Vârstă</string>
+    <string name="FMEtlVarstaContentText">%</string>
+    <string name="FMEtlEmailTitleText">E-mail</string>
+    <string name="FMEtlEmailContentText">%</string>
+    <string name="FMEtlTelefonTitleText">Telefon</string>
+    <string name="FMEtlTelefonContentText">%</string>
+    <string name="FMEtlAdresaTitleText">Adresa</string>
+    <string name="FMEtlAdresaContentText">%</string>
+    <string name="FMEtlProfesieTitleText">Profesie</string>
+    <string name="FMEtlProfesieContentText">%</string>
+    <string name="FMEtlLocDeMunTitleText">Loc de muncă</string>
+    <string name="FMEtlLocDeMunContentText">%</string>
+
 
 </resources>

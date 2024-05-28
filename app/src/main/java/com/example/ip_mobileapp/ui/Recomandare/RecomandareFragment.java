@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentRecomandareBinding;
@@ -25,7 +26,20 @@ public class RecomandareFragment extends Fragment {
         binding = FragmentRecomandareBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        String date = getArguments().getString("date");
+        String diagnostic = getArguments().getString("diagnostic");
+        String cure = getArguments().getString("cure");
+        String recom = getArguments().getString("recomandare");
 
+        TextView dateText = binding.irDateText;
+        TextView diagText = binding.irTitleText;
+        TextView cureText = binding.tcvTratamentText;
+        TextView recomText = binding.svDescriptionText;
+
+        dateText.setText(date);
+        diagText.setText(diagnostic);
+        cureText.setText(cure);
+        recomText.setText(recom);
 
 
         return root;

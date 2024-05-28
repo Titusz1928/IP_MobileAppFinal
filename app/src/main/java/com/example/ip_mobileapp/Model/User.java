@@ -13,6 +13,22 @@ public class User
         this.accessType=AccessType.PACIENT;
     }
 
+    public User(String firstName, String lastName, String cnp, Integer age, String street, String city, String county, String country, String phoneNumber, String emailAddress, String profession, String workplace) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cnp = cnp;
+        this.age = age;
+        this.street = street;
+        this.city = city;
+        this.county = county;
+        this.country = country;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.profession = profession;
+        this.workplace = workplace;
+        this.accessType = AccessType.PACIENT;
+    }
+
     public User(Map<String, Object> userData)
     {
         id = (Integer)userData.get("id");
