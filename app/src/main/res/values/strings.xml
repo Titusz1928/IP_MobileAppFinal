@@ -310,7 +310,7 @@
 
     <!-- URLs-->
     <!--server address-->
-    <string name="CLOUD_SERVER">http://16.170.131.136:5000</string>
+    <string name="CLOUD_SERVER">dummy ip address</string>
 
     <!--endpoints-->
     <string name="GET_CHAT_HISTORY">/get_chat_history</string>
@@ -320,7 +320,9 @@
     <string name="ADD_USER"> /add_user </string>
     <string name="GET_MEDICAL_RECORD"> /get_medical_record </string>
     <string name="MEDICAL_RECORD">/medicalrecord</string>
-    <string name="CHANGE_PASSWORD">/changepassword</string>
+    <string name="RESET_PASSWORD_EMAIL">/reset_password_email</string>
+    <string name="CHECK_CONFIRMATION_CODE">/check_confirmation_code</string>
+    <string name="CHANGE_PASSWORD">/change_password</string>
 
     <string name="URLregistration">/registration</string>
     <string name="LOGIN">/login</string>
@@ -349,6 +351,7 @@
     <string name="FMEtlLocDeMunTitleText">Loc de muncă</string>
     <string name="FMEtlLocDeMunContentText">%</string>
     <string name="CPA3ifcvConfirmButton">CONFIRMARE</string>
+
 
 
 </resources>

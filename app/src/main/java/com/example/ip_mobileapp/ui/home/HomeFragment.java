@@ -3,6 +3,7 @@ package com.example.ip_mobileapp.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -150,6 +151,15 @@ public class HomeFragment extends Fragment {
             redirectToLogin();
         }
 
+        ImageButton openWebPage = binding.llBrowserImageButton;
+
+        openWebPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openWebPage("https://www.google.com");
+            }
+        });
+
 
         ImageView infoButton = binding.HOMInfoImageView;
         TextView infoText = binding.icvDescriptionTextView;
@@ -166,6 +176,21 @@ public class HomeFragment extends Fragment {
 
 
         return root;
+    }
+
+    private void openWebPage(String url) {
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        Log.d("MYTag","enetered openWebPage function");
+        if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            // Handle the case where no browser is available
+            Handler handler = new Handler(Looper.getMainLooper());
+            handler.post(() -> {
+                Toast.makeText(requireContext(), "No application can handle this request. Please install a web browser.", Toast.LENGTH_LONG).show();
+            });
+        }
     }
 
     public MedicalRecord createMedicalRecordFromServerResponse(final Map<String, Object> serverResponse)
