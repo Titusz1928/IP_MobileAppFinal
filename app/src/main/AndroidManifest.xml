@@ -15,24 +15,32 @@
         android:theme="@style/Theme.IP_MobileApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <!-- New launcher activity -->
+        <activity android:name=".LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.IP_MobileApp.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.IP_MobileApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

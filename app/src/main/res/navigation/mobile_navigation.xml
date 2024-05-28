@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
+    <!--
     <fragment
         android:id="@+id/nav_login"
         android:name="com.example.ip_mobileapp.ui.Login.LoginFragment"
@@ -25,7 +26,7 @@
         android:id="@+id/nav_reset_password"
         android:name="com.example.ip_mobileapp.ui.ResetPassword.ResetPassword1Fragment"
         android:label="@string/reset_fragment_label"
-        tools:layout="@layout/fragment_reset_password1"/>
+        tools:layout="@layout/fragment_reset_password1"/>-->
 
     <fragment
         android:id="@+id/nav_home"

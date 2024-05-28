@@ -1,4 +1,4 @@
-package com.example.ip_mobileapp.ui.Registration;
+package com.example.ip_mobileapp.ui.ResetPassword;
 
 import android.os.Bundle;
 
@@ -12,28 +12,37 @@ import android.widget.Button;
 
 import com.example.ip_mobileapp.LoginActivity;
 import com.example.ip_mobileapp.R;
-import com.example.ip_mobileapp.databinding.FragmentLoginBinding;
-import com.example.ip_mobileapp.databinding.FragmentRegistrationBinding;
+import com.example.ip_mobileapp.databinding.FragmentResetPassword1Binding;
+import com.example.ip_mobileapp.databinding.FragmentResetPassword2Binding;
 import com.example.ip_mobileapp.ui.Login.LoginFragment;
 
 
-public class RegistrationFragment extends Fragment {
+public class ResetPassword2Fragment extends Fragment {
 
-    private FragmentRegistrationBinding binding;
+    private FragmentResetPassword2Binding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        binding = FragmentRegistrationBinding.inflate(inflater, container, false);
+        binding = FragmentResetPassword2Binding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button toLogin = binding.REGifcvBackButton;
+        Button toLogin = binding.RPA2ifcvBackButton;
+        Button toResetPassword3 = binding.RPA2ifcvConfirmButton;
+
 
         toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((LoginActivity) getActivity()).switchFragment(new LoginFragment());
+            }
+        });
+
+        toResetPassword3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((LoginActivity) getActivity()).switchFragment(new ResetPassword3Fragment());
             }
         });
 

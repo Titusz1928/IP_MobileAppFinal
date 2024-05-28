@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+
 import com.example.ip_mobileapp.LoginActivity;
 import com.example.ip_mobileapp.MainActivity;
 import com.example.ip_mobileapp.Model.User;
+import com.example.ip_mobileapp.Model.UserSession;
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentLoginBinding;
 import com.example.ip_mobileapp.ui.Registration.RegistrationFragment;
+import com.example.ip_mobileapp.ui.ResetPassword.ResetPassword1Fragment;
 import com.example.ip_mobileapp.ui.Sensors.SensorFragment;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -47,15 +51,7 @@ public class LoginFragment extends Fragment{
         TextInputEditText cnpText = binding.tilCNP;
         TextInputEditText passwordText = binding.tilPassword;
 
-        toRegistration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                NavHostFragment.findNavController(LoginFragment.this)
-                        .navigate(R.id.to_nav_registration);
-
-            }
-        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +64,7 @@ public class LoginFragment extends Fragment{
                         if (cnpString != null && passwordString != null) {
                             User user = new User(cnpString, passwordString);
                             RestTemplate restTemplate = new RestTemplate();
-                            user = restTemplate.postForObject("@string/CLOUD_SERVER"+"@string/LOGIN",
+                            user = restTemplate.postForObject(getString(R.string.CLOUD_SERVER)+getString(R.string.LOGIN),
                                     user, User.class);
 
                             if (Objects.equals(user.getId(), -1)) {
@@ -78,8 +74,19 @@ public class LoginFragment extends Fragment{
                                             Toast.LENGTH_SHORT).show();
                                 });
                             } else {
+                                UserSession.getInstance(getActivity()).setUser(user);
+
+                                Handler handler = new Handler(Looper.getMainLooper());
+                                handler.post(() -> {
+                                    Toast.makeText(getActivity(), "Bine ai venit!",
+                                            Toast.LENGTH_SHORT).show();
+                                });
+
+                                Log.d("MyTag", user.toString());
+
                                 Intent intent = new Intent(getActivity(), MainActivity.class);
                                 startActivity(intent);
+                                getActivity().finish();
                             }
                         }
                     } catch (Exception e) {
@@ -95,14 +102,21 @@ public class LoginFragment extends Fragment{
             }
         });
 
-        toResetPassword1.setOnClickListener(new View.OnClickListener() {
+        toRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Using NavController to navigate
-                NavHostFragment.findNavController(LoginFragment.this)
-                        .navigate(R.id.to_nav_reset_password);
+            public void onClick(View view) {
+                ((LoginActivity) getActivity()).switchFragment(new RegistrationFragment());
             }
         });
+
+        toResetPassword1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((LoginActivity) getActivity()).switchFragment(new ResetPassword1Fragment());
+            }
+        });
+
+
 
 
         return root;
