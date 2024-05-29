@@ -323,6 +323,7 @@
     <string name="RESET_PASSWORD_EMAIL">/reset_password_email</string>
     <string name="CHECK_CONFIRMATION_CODE">/check_confirmation_code</string>
     <string name="CHANGE_PASSWORD">/change_password</string>
+    <string name="GET_ALARMS">/get_alarms</string>
 
     <string name="URLregistration">/registration</string>
     <string name="LOGIN">/login</string>
