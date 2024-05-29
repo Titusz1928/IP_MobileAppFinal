@@ -70,7 +70,7 @@ public class LoginFragment extends Fragment{
                             if (Objects.equals(user.getId(), -1)) {
                                 Handler handler = new Handler(Looper.getMainLooper());
                                 handler.post(() -> {
-                                    Toast.makeText(getActivity(), "Datele sunt incorecte",
+                                    Toast.makeText(getActivity(), getString(R.string.INCORRECT_DATA),
                                             Toast.LENGTH_SHORT).show();
                                 });
                             } else {
@@ -78,7 +78,7 @@ public class LoginFragment extends Fragment{
 
                                 Handler handler = new Handler(Looper.getMainLooper());
                                 handler.post(() -> {
-                                    Toast.makeText(getActivity(), "Bine ai venit!",
+                                    Toast.makeText(getActivity(), getString(R.string.WELCOME),
                                             Toast.LENGTH_SHORT).show();
                                 });
 

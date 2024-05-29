@@ -86,7 +86,7 @@ public class RegistrationFragment extends Fragment {
 
                             Handler handler = new Handler(Looper.getMainLooper());
                             handler.post(() -> {
-                                Toast.makeText(getActivity(), "Cont creat, email trimis!",
+                                Toast.makeText(getActivity(), getString(R.string.AFTER_REGISTRATION),
                                         Toast.LENGTH_SHORT).show();
                             });
                             ((LoginActivity) getActivity()).switchFragment(new LoginFragment());
@@ -96,7 +96,7 @@ public class RegistrationFragment extends Fragment {
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(() -> {
                             Log.d("MyTag",e.getMessage());
-                            Toast.makeText(getActivity(),"CNP-ul sau nr de telefon deja exista",
+                            Toast.makeText(getActivity(),getString(R.string.REGISTRATION_FAIL),
                                     Toast.LENGTH_LONG).show();
                         });
                     }

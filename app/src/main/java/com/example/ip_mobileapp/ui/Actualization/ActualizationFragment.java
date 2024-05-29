@@ -83,7 +83,7 @@ public class ActualizationFragment extends Fragment {
                                         String url = getString(R.string.CLOUD_SERVER)+getString(R.string.REPORT_ALARM);
                                         ResponseEntity<Void> response = restTemplate.postForEntity(url,
                                                 requestParams, Void.class);
-                                        displayAlarmToast("Situație de alarmă! ");
+                                        displayAlarmToast(getString(R.string.ALARM_TOAST));
 
                                     }
                                     if (tempCorp> sensorSettings.getSensorsReferences().getMaximumBodyTemperature() || tempCorp<sensorSettings.getSensorsReferences().getMinimumBodyTemperature()){
@@ -94,7 +94,7 @@ public class ActualizationFragment extends Fragment {
                                         String url = getString(R.string.CLOUD_SERVER)+getString(R.string.REPORT_ALARM);
                                         ResponseEntity<Void> response = restTemplate.postForEntity(url,
                                                 requestParams, Void.class);
-                                        displayAlarmToast("Situație de alarmă! ");
+                                        displayAlarmToast(getString(R.string.ALARM_TOAST));
                                     }
                                     if(greu > sensorSettings.getSensorsReferences().getMaximumWeight() || greu < sensorSettings.getSensorsReferences().getMinimumWeight()){
                                         Alarm alarm = new Alarm("abnormal weight", AlarmType.UNUSUAL_BODY_PARAMETERS.ordinal());
@@ -104,7 +104,7 @@ public class ActualizationFragment extends Fragment {
                                         String url = getString(R.string.CLOUD_SERVER)+getString(R.string.REPORT_ALARM);
                                         ResponseEntity<Void> response = restTemplate.postForEntity(url,
                                                 requestParams, Void.class);
-                                        displayAlarmToast("Situație de alarmă! ");
+                                        displayAlarmToast(getString(R.string.ALARM_TOAST));
                                     }
                                     if(glic > sensorSettings.getSensorsReferences().getMaximumGlucose() || glic<sensorSettings.getSensorsReferences().getMinimumGlucose()){
                                         Alarm alarm = new Alarm("abnormal glucose level", AlarmType.UNUSUAL_BODY_PARAMETERS.ordinal());
@@ -114,7 +114,7 @@ public class ActualizationFragment extends Fragment {
                                         String url = getString(R.string.CLOUD_SERVER)+getString(R.string.REPORT_ALARM);
                                         ResponseEntity<Void> response = restTemplate.postForEntity(url,
                                                 requestParams, Void.class);
-                                        displayAlarmToast("Situație de alarmă! ");
+                                        displayAlarmToast(getString(R.string.ALARM_TOAST));
                                     }
 
 
@@ -141,13 +141,13 @@ public class ActualizationFragment extends Fragment {
                                 } catch (Exception e) {
                                     Log.e("MyTag", "Eroare: "+ e.getMessage());
                                     Handler handler = new Handler(Looper.getMainLooper());
-                                    handler.post(() -> Toast.makeText(getActivity(), "Eroare ", Toast.LENGTH_LONG).show());
+                                    handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                                 }
                             }).start();
                         } catch (Exception e) {
                             Log.e("MyTag", "Eroare: "+ e.getMessage());
                             Handler handler = new Handler(Looper.getMainLooper());
-                            handler.post(() -> Toast.makeText(getActivity(), "Eroare", Toast.LENGTH_LONG).show());
+                            handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                         }
                     }
                 }

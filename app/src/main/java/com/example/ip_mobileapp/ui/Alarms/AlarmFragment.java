@@ -92,7 +92,7 @@ public class AlarmFragment extends Fragment {
                         } catch (Exception e) {
                             Log.e("MyTag", "Error fetching alarms", e);
                             Handler handler = new Handler(Looper.getMainLooper());
-                            handler.post(() -> Toast.makeText(getActivity(), "Eroare ", Toast.LENGTH_LONG).show());
+                            handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                         }
                     }).start();
                 }catch (Exception e) {
@@ -100,7 +100,7 @@ public class AlarmFragment extends Fragment {
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(() -> {
                         Log.d("MyTag",e.getMessage());
-                        Toast.makeText(getActivity(), "Eroare ",
+                        Toast.makeText(getActivity(), getString(R.string.ERROR),
                                 Toast.LENGTH_LONG).show();
                     });
                 }

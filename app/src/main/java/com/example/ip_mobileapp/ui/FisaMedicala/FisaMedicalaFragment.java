@@ -159,19 +159,19 @@ public class FisaMedicalaFragment extends Fragment{
 
                             } else {
                                 Handler handler = new Handler(Looper.getMainLooper());
-                                handler.post(() -> Toast.makeText(getActivity(), "Error fetching medical record", Toast.LENGTH_LONG).show());
+                                handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                             }
                         } catch (Exception e) {
                             Log.e("MyTag", "Error fetching medical record", e);
                             Handler handler = new Handler(Looper.getMainLooper());
-                            handler.post(() -> Toast.makeText(getActivity(), "Eroare: " + e.getMessage(), Toast.LENGTH_LONG).show());
+                            handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                         }
                     }).start();
                 }catch (Exception e) {
                     // Handle exceptions
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(() -> {
-                        Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                        Toast.makeText(getActivity(), getString(R.string.ERROR),
                                 Toast.LENGTH_LONG).show();
                     });
                 }
@@ -198,7 +198,7 @@ public class FisaMedicalaFragment extends Fragment{
     private void redirectToLogin() {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(() -> {
-            Toast.makeText(getActivity(), "Eroare!",
+            Toast.makeText(getActivity(), getString(R.string.ERROR),
                     Toast.LENGTH_SHORT).show();
         });
         Intent intent = new Intent(requireActivity(), LoginActivity.class);

@@ -87,7 +87,7 @@ public class ResetPassword2Fragment extends Fragment {
                                 ((LoginActivity) getActivity()).switchFragment(fragment);
                             }else{
                                 Log.d("MyTag","error ");
-                                Toast.makeText(getActivity(), "Eroare: " , Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show();
                             }
 
                         }
@@ -95,7 +95,7 @@ public class ResetPassword2Fragment extends Fragment {
                     // Handle exceptions
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(() -> {
-                        Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                        Toast.makeText(getActivity(), getString(R.string.ERROR),
                                 Toast.LENGTH_LONG).show();
                     });
                 }
@@ -116,7 +116,7 @@ public class ResetPassword2Fragment extends Fragment {
     private void redirectToLogin() {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(() -> {
-            Toast.makeText(getActivity(), "Eroare!",
+            Toast.makeText(getActivity(), getString(R.string.ERROR),
                     Toast.LENGTH_SHORT).show();
         });
         Intent intent = new Intent(requireActivity(), LoginActivity.class);

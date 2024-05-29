@@ -28,7 +28,14 @@
 
 
     <!--ERRORS-->
-    <string name="ERROR">Eroare</string>
+    <string name="ERROR">Eroare!</string>
+    <string name="BROWSER_ERROR">No application can handle this request. Please install a web browser!</string>
+    <string name="INCORRECT_DATA">Datele sunt incorecte!</string>
+    <string name="WELCOME">Bine ai venit!</string>
+    <string name="ALARM_TOAST">Situație de alarmă</string>
+    <string name="AFTER_REGISTRATION">Cont creat, email trimis!</string>
+    <string name="REGISTRATION_FAIL">CNP-ul sau nr de telefon deja exista</string>
+    <string name="PASSWORD_CHANGE">Parola a fost schimbată!</string>
 
     <!-- Main Layout (login) -->
     <string name="MAINllLogoImageView"> Logo Image </string>

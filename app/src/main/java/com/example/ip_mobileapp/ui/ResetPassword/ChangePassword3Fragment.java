@@ -77,13 +77,13 @@ public class ChangePassword3Fragment extends Fragment {
                                     Log.d("MyTag", "password changed ");
                                     Handler handler = new Handler(Looper.getMainLooper());
                                     handler.post(() -> {
-                                        Toast.makeText(getActivity(), "Parola a fost schimbată!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), getString(R.string.PASSWORD_CHANGE), Toast.LENGTH_LONG).show();
                                     });
 
                                     ((LoginActivity) getActivity()).switchFragment(new ResetPassword3Fragment());
                                 } else {
                                     Log.d("MyTag", "error ");
-                                    Toast.makeText(getActivity(), "Eroare ", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show();
                                 }
                             }
                         }
@@ -91,7 +91,7 @@ public class ChangePassword3Fragment extends Fragment {
                         // Handle exceptions
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(() -> {
-                            Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                            Toast.makeText(getActivity(), getString(R.string.ERROR),
                                     Toast.LENGTH_LONG).show();
                         });
                     }
@@ -116,7 +116,7 @@ public class ChangePassword3Fragment extends Fragment {
     private void redirectToLogin() {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(() -> {
-            Toast.makeText(getActivity(), "Eroare!",
+            Toast.makeText(getActivity(), getString(R.string.ERROR),
                     Toast.LENGTH_SHORT).show();
         });
         Intent intent = new Intent(requireActivity(), LoginActivity.class);

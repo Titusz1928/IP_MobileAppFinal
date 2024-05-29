@@ -171,14 +171,14 @@ public class ChatFragment extends Fragment {
                             } catch (Exception e) {
                                 Log.e("MyTag", "Eroare", e);
                                 Handler handler = new Handler(Looper.getMainLooper());
-                                handler.post(() -> Toast.makeText(getActivity(), "Eroare: " + e.getMessage(), Toast.LENGTH_LONG).show());
+                                handler.post(() -> Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show());
                             }
                         }).start();
                     }catch (Exception e) {
                         // Handle exceptions
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(() -> {
-                            Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                            Toast.makeText(getActivity(), getString(R.string.ERROR),
                                     Toast.LENGTH_LONG).show();
                         });
                     }
@@ -201,7 +201,7 @@ public class ChatFragment extends Fragment {
     private void redirectToLogin() {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(() -> {
-            Toast.makeText(getActivity(), "Eroare!",
+            Toast.makeText(getActivity(), getString(R.string.ERROR),
                     Toast.LENGTH_SHORT).show();
         });
         Intent intent = new Intent(requireActivity(), LoginActivity.class);
@@ -251,13 +251,11 @@ public class ChatFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("prenume", prenume);
-//                bundle.putString("diagnostic", diagnostic);
-//                bundle.putString("cure", cure);
-//                bundle.putString("recom", recomandare);
+
 
                 // Navigate to the target fragment with the data
                 NavHostFragment.findNavController(ChatFragment.this)
-                        .navigate(R.id.to_recomandare, bundle);
+                        .navigate(R.id.to_selected_chat, bundle);
 
             }
         });
