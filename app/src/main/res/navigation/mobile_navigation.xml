@@ -52,6 +52,9 @@
         android:name="com.example.ip_mobileapp.ui.Sensors.SensorFragment"
         android:label="@string/sensor_fragment_label"
         tools:layout="@layout/fragment_sensor"/>
+    <action
+        android:id="@+id/to_nav_sensors"
+        app:destination="@+id/nav_sensors"/>
     <fragment
         android:id="@+id/nav_actualization"
         android:name="com.example.ip_mobileapp.ui.Actualization.ActualizationFragment"
@@ -102,7 +105,7 @@
     <fragment
         android:id="@+id/nav_recomandare"
         android:name="com.example.ip_mobileapp.ui.Recomandare.RecomandareFragment"
-        android:label="@string/RECirTitleText"
+        android:label="@string/recomandare_layout_label"
         tools:layout="@layout/fragment_recomandare"/>
 
     <fragment

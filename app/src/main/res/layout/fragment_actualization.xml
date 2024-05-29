@@ -60,7 +60,10 @@
                         android:background="@drawable/white_black_border"
 
                         android:inputType="number"
-                        android:text="0" />
+
+                        android:text="0"
+
+                        />
 
                 </TableRow>
 

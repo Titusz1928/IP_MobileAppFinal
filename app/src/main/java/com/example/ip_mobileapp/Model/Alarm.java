@@ -2,59 +2,32 @@ package com.example.ip_mobileapp.Model;
 
 public class Alarm
 {
-    public Integer getId()
-    {
-        return id;
+
+
+    public String getAdditional_text() {
+        return additional_text;
     }
 
-    public AlarmType getAlarmType()
-    {
-        return alarmType;
+    public void setAdditional_text(String additional_text) {
+        this.additional_text = additional_text;
     }
 
-    public Boolean getIsResolved()
-    {
-        return isResolved;
+    public Integer getAlarm_type() {
+        return alarm_type;
     }
 
-    public Integer getUserId()
-    {
-        return userId;
+    public void setAlarm_type(Integer alarm_type) {
+        this.alarm_type = alarm_type;
     }
 
-    public String getAdditionalText()
-    {
-        return additionalText;
+    public Alarm(String additional_text, Integer alarm_type) {
+        this.additional_text = additional_text;
+        this.alarm_type = alarm_type;
     }
 
-    public void setAdditionalText(String additionalText)
-    {
-        this.additionalText = additionalText;
+    public Alarm() {
     }
 
-    public void setAlarmType(AlarmType alarmType)
-    {
-        this.alarmType = alarmType;
-    }
-
-    public void setUserId(Integer userId)
-    {
-        this.userId = userId;
-    }
-
-    public void setIsResolved(Boolean resolved)
-    {
-        isResolved = resolved;
-    }
-
-    public void setId(Integer id)
-    {
-        this.id = id;
-    }
-
-    private Integer id;
-    private Integer userId;
-    private Boolean isResolved;
-    private String additionalText;
-    private AlarmType alarmType;
+    private String additional_text;
+    private Integer alarm_type;
 }

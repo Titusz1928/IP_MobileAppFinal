@@ -249,8 +249,16 @@ public class ChatFragment extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("prenume", prenume);
+//                bundle.putString("diagnostic", diagnostic);
+//                bundle.putString("cure", cure);
+//                bundle.putString("recom", recomandare);
+
+                // Navigate to the target fragment with the data
                 NavHostFragment.findNavController(ChatFragment.this)
-                        .navigate(R.id.to_selected_chat);
+                        .navigate(R.id.to_recomandare, bundle);
+
             }
         });
 

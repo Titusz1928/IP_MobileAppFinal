@@ -9,16 +9,25 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ip_mobileapp.LoginActivity;
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentChangePassword2Binding;
 import com.example.ip_mobileapp.databinding.FragmentChangePassword3Binding;
+import com.example.ip_mobileapp.ui.Login.LoginFragment;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChangePassword3Fragment extends Fragment {
     private FragmentChangePassword3Binding binding;
@@ -30,13 +39,66 @@ public class ChangePassword3Fragment extends Fragment {
         binding = FragmentChangePassword3Binding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button resetPassword = binding.RPA3ifcvConfirmButton;
+        Button changePswdBtn = binding.RPA3ifcvConfirmButton;
 
-        resetPassword.setOnClickListener(new View.OnClickListener() {
+        Bundle args = getArguments();
+        String emailString;
+        if (args != null) {
+            emailString = args.getString("email");
+            Log.d("MyTag",emailString);
+        } else {
+            emailString = null;
+            redirectToLogin();
+        }
+
+        TextView newPasswordText = binding.tilNew;
+        TextView confirmNewPasswordText = binding.tilConfirm;
+
+
+        changePswdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ChangePassword3Fragment.this)
-                        .navigate(R.id.to_home);
+                String newString = newPasswordText.getText().toString();
+                String confirmString =confirmNewPasswordText.getText().toString();
+                Thread thread = new Thread(() -> {
+                    try {
+                        if(newString!=null){
+                            if(newString.equals(confirmString)) {
+                                RestTemplate restTemplate = new RestTemplate();
+                                Map<String, String> requestParams = new HashMap<>();
+                                requestParams.put("emailAddress", emailString);
+                                requestParams.put("newPassword", newString);
+
+                                String url = getString(R.string.CLOUD_SERVER) + getString(R.string.CHANGE_PASSWORD);
+                                ResponseEntity<Void> response = restTemplate.postForEntity(url,
+                                        requestParams, Void.class);
+
+                                if (response.getStatusCode().is2xxSuccessful()) {
+                                    Log.d("MyTag", "password changed ");
+                                    Handler handler = new Handler(Looper.getMainLooper());
+                                    handler.post(() -> {
+                                        Toast.makeText(getActivity(), "Parola a fost schimbată!", Toast.LENGTH_LONG).show();
+                                    });
+
+                                    ((LoginActivity) getActivity()).switchFragment(new ResetPassword3Fragment());
+                                } else {
+                                    Log.d("MyTag", "error ");
+                                    Toast.makeText(getActivity(), "Eroare ", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        // Handle exceptions
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(() -> {
+                            Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        });
+                    }
+                });
+                thread.start();
+
+                //((LoginActivity) getActivity()).switchFragment(new LoginFragment());
             }
         });
 

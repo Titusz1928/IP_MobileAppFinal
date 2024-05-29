@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,402 +8,25 @@
 
     <ScrollView
         android:id="@+id/SEN_ScrollView"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".controller.SENfileFragmentJ"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryLight">
+        android:background="@drawable/gradient"
+        tools:context=".controller.SENfileFragmentJ">
 
         <LinearLayout
             android:id="@+id/svLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/llTopCardView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorBackground"
-                app:layout_constraintTop_toBottomOf="@+id/cv1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/tcvConstraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tcvTitleText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-light"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-
-                        android:textColor="@color/colorTextPrimary"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:text="@string/SENtcvTitleText"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/llDataCardView"
-                android:layout_width="match_parent"
-                android:layout_height="560dp"
-                android:background="@color/colorBackground"
-                android:layout_marginTop="10dp" >
-
-                <RelativeLayout
-                    android:id="@+id/dcvRelativeLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TableLayout
-                        android:id="@+id/rlDataTableLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-
-                        <TableRow
-                            android:id="@+id/dtlTensArtRow"
-                            android:background="@color/colorPrimaryLight"
-                            android:layout_marginTop="20dp">
-
-                            <TextView
-                                android:id="@+id/tarInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:background="@drawable/bordered_lightgreen"
-                                android:padding="10dp"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtarInfoTextView">
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/tarContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/white_black_border"
-                                android:padding="10dp"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtarContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlPulsRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/pInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENpInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/pContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENpContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlTempCorSENw"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/tcInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtcInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/tcContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtcContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlGreuRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/grInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENgrInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/grContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENgrContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlGlicerRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/glInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENglInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/glContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENglContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlLuminRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/luInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENluInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/luContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENluContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlTempAmbRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/tambInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtambInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/tambContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENtambContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlPrezGazRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/pgInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENpgInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/pgContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENpgContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlUmidRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/umidInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENumidInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/umidContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENumidContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/dtlSENxRow"
-                            android:background="@color/colorPrimaryLight">
-
-                            <TextView
-                                android:id="@+id/SENxInfoTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:padding="10dp"
-                                android:background="@drawable/bordered_lightgreen"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENSENxInfoTextView" >
-
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/SENxContentTextView"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:padding="10dp"
-                                android:background="@drawable/white_black_border"
-
-                                android:textSize="24sp"
-                                android:text="@string/SENSENxContentTextView" >
-
-                            </TextView>
-
-                        </TableRow>
-
-                    </TableLayout>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/llActualizareCardView"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="30dp"
-                android:layout_margin="10dp">
+                app:cardCornerRadius="30dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/acvConstraintLayout"
@@ -414,29 +38,29 @@
                         android:id="@+id/acvTitleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bottom_border_on_white"
+                        android:text="@string/SENacvTitleText"
+                        android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.08"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.469"
-                        android:background="@drawable/bottom_border_on_white"
 
-                        android:textSize="24sp"
-                        android:text="@string/SENacvTitleText" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.469" />
 
                     <ImageView
                         android:id="@+id/acvImageView"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
+                        android:contentDescription="@string/SENacvImageView"
+                        android:src="@drawable/ic_menu_actualization"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.766"
                         app:layout_constraintStart_toEndOf="@+id/acvTitleText"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.509"
-                        android:src="@drawable/ic_menu_actualization"
-                        android:contentDescription="@string/SENacvImageView"/>
+                        app:layout_constraintVertical_bias="0.509" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -445,10 +69,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/llVizualizareCardView"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="30dp"
-                android:layout_margin="10dp">
+                app:cardCornerRadius="30dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/vcvConstraintLayout"
@@ -460,16 +84,16 @@
                         android:id="@+id/vcvTitleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bottom_border_on_white"
+                        android:text="Vizualizare date"
+                        android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.08"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.469"
-                        android:background="@drawable/bottom_border_on_white"
 
-                        android:text="Vizualizare date"
-                        android:textSize="24sp" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.469" />
 
                     <ImageView
                         android:id="@+id/vcvImageView"
@@ -491,7 +115,7 @@
                 android:id="@+id/llBottomCardView"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@color/colorBackground"
+                android:visibility="invisible"
                 app:cardCornerRadius="0dp">
 
             </androidx.cardview.widget.CardView>

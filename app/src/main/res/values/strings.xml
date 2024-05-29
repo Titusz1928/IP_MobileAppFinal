@@ -5,7 +5,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Setări</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -203,7 +203,7 @@
     <string name="SENpgContentTextView"> NU </string>
     <string name="SENumidInfoTextView">Umiditate</string>
     <string name="SENumidContentTextView"> NU </string>
-    <string name="SENSENxInfoTextView">SENximitate</string>
+    <string name="SENSENxInfoTextView">Proximitate</string>
     <string name="SENSENxContentTextView"> NU </string>
 
     <string name="SENacvTitleText">Actualizare date</string>
@@ -324,6 +324,9 @@
     <string name="CHECK_CONFIRMATION_CODE">/check_confirmation_code</string>
     <string name="CHANGE_PASSWORD">/change_password</string>
     <string name="GET_ALARMS">/get_alarms</string>
+    <string name="SAVE_SENSORS_DATA">/save_sensors_data</string>
+    <string name="GET_SENSORS_SETTINGS">/get_sensors_settings</string>
+    <string name="REPORT_ALARM">/report_alarm</string>
 
     <string name="URLregistration">/registration</string>
     <string name="LOGIN">/login</string>
@@ -358,6 +361,8 @@
     <string name="FMEconsultatiiTratamentTitle">Tratament</string>
     <string name="FMEconsultatiiRecomandareTitle">Recomandare</string>
     <string name="FMEalergiiTitle">Allergii</string>
+
+    <string name="recomandare_layout_label">Consultare</string>
 
 
 </resources>

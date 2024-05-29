@@ -24,9 +24,13 @@ import com.example.ip_mobileapp.Model.UserSession;
 import com.example.ip_mobileapp.R;
 import com.example.ip_mobileapp.databinding.FragmentChangePasswordBinding;
 import com.example.ip_mobileapp.databinding.FragmentChatBinding;
+import com.example.ip_mobileapp.ui.Login.LoginFragment;
 import com.example.ip_mobileapp.ui.Sensors.SensorFragment;
 import com.example.ip_mobileapp.ui.Settings.SettingsFragment;
 
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -56,77 +60,53 @@ public class ChangePasswordFragment extends Fragment {
         });
 
 
-        /*
-            newPasswordBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //CHANGE THE PASSWORD DIRECTLY WITHOUT EMAIL CODE
-                    UserSession userSession = UserSession.getInstance(requireActivity());
-                    User user = userSession.getUser();
-                    Thread thread = new Thread(() -> {
-                        try {
-                            if (user != null) {
-                                Log.d("MyTAg",user.getPassword().toString()+" "+oldPasswordText.getText().toString());
-                                if (user.getPassword().equals(oldPasswordText.getText().toString())) {
-                                    if (newPasswordText.getText().toString().equals(confirmPasswordText.getText().toString())) {
+        Button toResetPassword2 = binding.CPAifcvConfirmButton;
 
-                                        RestTemplate restTemplate = new RestTemplate();
+        EditText emailText = binding.ifcvEmailEdit;
 
-                                        Map<String, String> requestBody = new HashMap<>();
-                                        requestBody.put("emailAddress", user.getEmailAddress());
-                                        requestBody.put("newPassword", newPasswordText.getText().toString());
 
-                                        ResponseEntity<Void> responseEntity = restTemplate.postForEntity(
-                                                getString(R.string.CLOUD_SERVER) + getString(R.string.CHANGE_PASSWORD),
-                                                requestBody, Void.class);
+        toResetPassword2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String emailString = emailText.getText().toString();
+                Thread thread = new Thread(() -> {
+                    try {
+                        if(emailString!=null){
+                            RestTemplate restTemplate = new RestTemplate();
+                            Map<String, String> requestParams = new HashMap<>();
+                            requestParams.put("emailAddress", emailString);
 
-                                        if (responseEntity.getStatusCode().is2xxSuccessful()) {
-                                            toastMessage("Parola a fost schimbată cu succes!");
-                                        } else {
-                                            toastMessage("A apărut o eroare la schimbarea parolei.");
-                                        }
-
-                                    } else {
-                                        toastMessage("Parolele nu se potrivesc!");
-                                    }
-                                } else {
-                                    toastMessage("Parola este incorectă!");
-                                }
-                            } else {
-                                redirectToLogin();
+                            String url = getString(R.string.CLOUD_SERVER) + getString(R.string.RESET_PASSWORD_EMAIL);
+                            ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(
+                                    url,
+                                    HttpMethod.POST,
+                                    new HttpEntity<>(requestParams),
+                                    new ParameterizedTypeReference<Map<String, Object>>() {});
+                            if (responseEntity.getStatusCode().is2xxSuccessful()) {
+                                Log.d("MyTag","email sent ");
+                                Bundle bundle = new Bundle();
+                                bundle.putString("email", emailString);
+                                ResetPassword2Fragment fragment = new ResetPassword2Fragment();
+                                fragment.setArguments(bundle);
+                                ((LoginActivity) getActivity()).switchFragment(fragment);
+                            }else{
+                                Log.d("MyTag","error ");
+                                Toast.makeText(getActivity(), "Eroare: " , Toast.LENGTH_LONG).show();
                             }
-                        } catch (Exception e) {
-                            // Handle exceptions
-                            Handler handler = new Handler(Looper.getMainLooper());
-                            handler.post(() -> {
-                                Log.d("MyTag", e.getMessage());
-                                Toast.makeText(getActivity(), "A apărut o eroare: " + e.getMessage(),
-                                        Toast.LENGTH_LONG).show();
-                            });
+
                         }
-                    });
-                    thread.start();
-                }
-
-                private void toastMessage(String mesaj) {
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(() -> {
-                        Toast.makeText(getActivity(), mesaj, Toast.LENGTH_LONG).show();
-                    });
-                }
-
-                private void redirectToLogin() {
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(() -> {
-                        Toast.makeText(getActivity(), "Eroare!",
-                                Toast.LENGTH_SHORT).show();
-                    });
-                    Intent intent = new Intent(requireActivity(), LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                }
-            });
-            */
+                    } catch (Exception e) {
+                        // Handle exceptions
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(() -> {
+                            Toast.makeText(getActivity(), "Eroare: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        });
+                    }
+                });
+                thread.start();
+            }
+        });
 
 
 

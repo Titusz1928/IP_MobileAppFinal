@@ -65,7 +65,7 @@ public class ResetPassword2Fragment extends Fragment {
         toResetPassword3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*String codeString = codeText.getText().toString();
+                String codeString = codeText.getText().toString();
                 Thread thread = new Thread(() -> {
                     try {
                         if(codeString!=null){
@@ -82,7 +82,9 @@ public class ResetPassword2Fragment extends Fragment {
                                 Log.d("MyTag","code checked ");
                                 Bundle bundle = new Bundle();
                                 bundle.putString("email", emailString);
-                                ((LoginActivity) getActivity()).switchFragment(new ResetPassword3Fragment());
+                                ResetPassword3Fragment fragment = new ResetPassword3Fragment();
+                                fragment.setArguments(bundle);
+                                ((LoginActivity) getActivity()).switchFragment(fragment);
                             }else{
                                 Log.d("MyTag","error ");
                                 Toast.makeText(getActivity(), "Eroare: " , Toast.LENGTH_LONG).show();
@@ -98,12 +100,12 @@ public class ResetPassword2Fragment extends Fragment {
                     });
                 }
             });
-                thread.start();*/
-                Bundle bundle = new Bundle();
-                bundle.putString("email", emailString);
-                ResetPassword3Fragment fragment = new ResetPassword3Fragment();
-                fragment.setArguments(bundle);
-                ((LoginActivity) getActivity()).switchFragment(fragment);
+                thread.start();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("email", emailString);
+//                ResetPassword3Fragment fragment = new ResetPassword3Fragment();
+//                fragment.setArguments(bundle);
+//                ((LoginActivity) getActivity()).switchFragment(fragment);
             }
         });
 

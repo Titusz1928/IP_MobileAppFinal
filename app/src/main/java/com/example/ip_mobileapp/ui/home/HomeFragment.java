@@ -226,7 +226,7 @@ public class HomeFragment extends Fragment {
                 bundle.putString("date", date);
                 bundle.putString("diagnostic", diagnostic);
                 bundle.putString("cure", cure);
-                bundle.putString("recom", recomandare);
+                bundle.putString("recomandare", recomandare);
 
                 // Navigate to the target fragment with the data
                 NavHostFragment.findNavController(HomeFragment.this)
