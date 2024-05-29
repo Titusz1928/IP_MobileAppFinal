@@ -8,18 +8,17 @@
     tools:visibility="visible">
 
     <View
-
         android:id="@+id/view"
-        android:layout_width="400dp"
-        android:layout_height="594dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/roundstyle"
-        android:backgroundTint="@color/colorBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5" />
+
     <ScrollView
         android:id="@+id/FMEscrollView"
         android:layout_width="0dp"
@@ -141,6 +140,7 @@
                             android:textSize="18sp"
                             android:padding="8dp" />
                     </TableRow>
+
                     <TableRow>
                         <TextView
                             android:id="@+id/tlEmailTitleText"
@@ -199,7 +199,6 @@
                             android:text="@string/FMEtlAdresaContentText"
                             android:textSize="18sp"
                             android:padding="8dp" />
-
                     </TableRow>
 
                     <TableRow>
@@ -232,7 +231,6 @@
                             android:textSize="18sp"
                             android:padding="8dp"
                             android:background="@color/colorPrimaryLight" />
-
                         <TextView
                             android:id="@+id/tlLocDeMuneContentText"
                             android:layout_width="0dp"
@@ -243,7 +241,7 @@
                             android:padding="8dp" />
                     </TableRow>
 
-                    <!-- Adăugați mai multe rânduri după cum este necesar -->
+                    <!-- Add more rows as needed -->
 
                 </TableLayout>
             </LinearLayout>
@@ -260,7 +258,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Consultații"
+                    android:text="@string/FMEconsultatiTitle"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:paddingBottom="8dp" />
@@ -271,7 +269,7 @@
                     android:layout_height="wrap_content"
                     android:stretchColumns="*">
 
-                    <!-- Rând de antet -->
+                    <!-- Header row -->
                     <TableRow
                         android:background="@color/colorPrimaryLight"
                         android:padding="8dp">
@@ -279,7 +277,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Data"
+                            android:text="@string/FMEconsultatiiDataTitle"
                             android:textSize="14sp"
                             android:padding="8dp"
                             android:textStyle="bold" />
@@ -287,7 +285,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Diagnostic"
+                            android:text="@string/FMEconsultatiiDiagnosticTitle"
                             android:textSize="12sp"
                             android:padding="8dp"
                             android:textStyle="bold" />
@@ -295,7 +293,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Tratament"
+                            android:text="@string/FMEconsultatiiTratamentTitle"
                             android:textSize="13sp"
                             android:padding="8dp"
                             android:textStyle="bold" />
@@ -303,21 +301,64 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.1"
-                            android:text="Recomandare"
+                            android:text="@string/FMEconsultatiiRecomandareTitle"
                             android:textSize="11sp"
                             android:padding="7dp"
                             android:textStyle="bold" />
                     </TableRow>
 
-                    <!-- Rânduri pentru date consultații -->
+                    <!-- Data rows -->
 
-                    <!-- Adăugați mai multe rânduri după cum este necesar -->
+                    <!-- Add more rows as needed -->
+
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- Layout pentru Alergii -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#FFFFFF"
+                android:elevation="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FMEalergiiTitle"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+                <TableLayout
+                    android:id="@+id/llAlergiiTableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*">
+
+                    <!--                    &lt;!&ndash; Header row &ndash;&gt;-->
+                    <!--                    <TableRow-->
+                    <!--                        android:background="@color/colorPrimaryLight"-->
+                    <!--                        android:padding="8dp">-->
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="0dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_weight="1"-->
+                    <!--                            android:text="Allergy"-->
+                    <!--                            android:textSize="14sp"-->
+                    <!--                            android:padding="8dp"-->
+                    <!--                            android:textStyle="bold" />-->
+                    <!--                    </TableRow>-->
+
+                    <!-- Data rows -->
+
+                    <!-- Add more rows as needed -->
 
                 </TableLayout>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

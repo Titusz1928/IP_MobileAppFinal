@@ -351,7 +351,12 @@
     <string name="FMEtlLocDeMunTitleText">Loc de muncă</string>
     <string name="FMEtlLocDeMunContentText">%</string>
     <string name="CPA3ifcvConfirmButton">CONFIRMARE</string>
-
+    <string name="FMEconsultatiTitle">Consultații</string>
+    <string name="FMEconsultatiiDataTitle">Data</string>
+    <string name="FMEconsultatiiDiagnosticTitle">Diagnostic</string>
+    <string name="FMEconsultatiiTratamentTitle">Tratament</string>
+    <string name="FMEconsultatiiRecomandareTitle">Recomandare</string>
+    <string name="FMEalergiiTitle">Allergii</string>
 
 
 </resources>

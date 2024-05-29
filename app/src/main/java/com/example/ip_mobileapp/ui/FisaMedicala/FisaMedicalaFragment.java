@@ -129,7 +129,31 @@ public class FisaMedicalaFragment extends Fragment{
 
                                             tableLayout.addView(tableRow);
                                         }
+
                                     }
+
+                                    List<Allergy> allergyList = mapper.convertValue(
+                                            medicalRecord.getAllergies(),
+                                            new TypeReference<List<Allergy>>() {
+
+                                            });
+
+                                    if(allergyList!=null){
+                                        for (Allergy allergy : allergyList) {
+                                            Log.d("MyTag", allergy.getName());
+                                            TableLayout tableLayout = binding.llAlergiiTableLayout;
+                                            TableRow tableRow = new TableRow(requireActivity());
+                                            TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
+                                            tableRow.setLayoutParams(layoutParams);
+
+                                            TextView numeAlergieText = new TextView(requireActivity());
+                                            numeAlergieText.setText(String.valueOf(allergy.getName()));
+                                            tableRow.addView(numeAlergieText);
+
+                                            tableLayout.addView(tableRow);
+                                        }
+                                    }
+
                                 });
 
 
