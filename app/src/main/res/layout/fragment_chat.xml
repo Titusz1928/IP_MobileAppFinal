@@ -134,7 +134,7 @@
                 android:id="@+id/rlBottomCardView"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_marginTop="700dp">
+                android:layout_marginTop="650dp">
 
             </androidx.cardview.widget.CardView>
 

@@ -80,7 +80,8 @@ public class ChangePassword3Fragment extends Fragment {
                                         Toast.makeText(getActivity(), getString(R.string.PASSWORD_CHANGE), Toast.LENGTH_LONG).show();
                                     });
 
-                                    ((LoginActivity) getActivity()).switchFragment(new ResetPassword3Fragment());
+                                    NavHostFragment.findNavController(ChangePassword3Fragment.this)
+                                            .navigate(R.id.to_home);
                                 } else {
                                     Log.d("MyTag", "error ");
                                     Toast.makeText(getActivity(), getString(R.string.ERROR), Toast.LENGTH_LONG).show();

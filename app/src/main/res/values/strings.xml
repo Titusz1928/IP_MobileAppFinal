@@ -251,7 +251,7 @@
     <string name="CHAc5cvTextView">John Doe</string>
 
     <!-- Selected chat -->
-    <string name="selected_chat_label">selected chat</string>
+    <string name="selected_chat_label">Chat</string>
     <string name="SCHm1cvContinutTextView">.................................................................................................................</string>
     <string name="SCHm1cvTimeTextView">23:10</string>
 
@@ -317,7 +317,8 @@
 
     <!-- URLs-->
     <!--server address-->
-    <string name="CLOUD_SERVER">dummy ip</string>
+    <string name="CLOUD_SERVER">=ipadress</string>
+    <string name="CLOUD_SERVER2">ipadress</string>
 
     <!--endpoints-->
     <string name="GET_CHAT_HISTORY">/get_chat_history</string>
@@ -340,6 +341,7 @@
     <string name="URLchats"> /chats </string>
     <string name="URLmessages"> /mesaje </string>
     <string name="URLsend"> /send </string>
+    <string name="URLsearch"> /search </string>
 
     <!--FISA MEDICALA-->
     <string name="FMEllTitleTextView">Date Personale</string>

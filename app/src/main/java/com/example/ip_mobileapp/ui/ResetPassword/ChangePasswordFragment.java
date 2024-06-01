@@ -86,9 +86,8 @@ public class ChangePasswordFragment extends Fragment {
                                 Log.d("MyTag","email sent ");
                                 Bundle bundle = new Bundle();
                                 bundle.putString("email", emailString);
-                                ResetPassword2Fragment fragment = new ResetPassword2Fragment();
-                                fragment.setArguments(bundle);
-                                ((LoginActivity) getActivity()).switchFragment(fragment);
+                                NavHostFragment.findNavController(ChangePasswordFragment.this)
+                                        .navigate(R.id.to_change_password2, bundle);
                             }else{
                                 Log.d("MyTag","error ");
                                 Toast.makeText(getActivity(), getString(R.string.ERROR) , Toast.LENGTH_LONG).show();
